@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package badbot.messages;
+
+message Tuple {
+    float x = 1;
+    float y = 2;
+    float z = 3;    
+};
+
+message ImuData {
+    Tuple acceleration = 1;
+    Tuple orientation = 2;
+    float temperature = 3;
+    float pressure = 4;
+    float altitude = 5;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package badbot.messages;
+
+message GpsData {
+    double latitude = 1;
+    double longitude = 2;
+    double hdop = 3;
+    double vdop = 4;
+    double pdop = 5;
+    int32 satellites_visible = 6;
+    int32 satellites_used = 7;
+}

@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package badbot.messages;
+
+enum MessageType {
+    STATUS_BOT = 0;
+    CMD_TOGGLE = 1;
+    CMD_OPERATIONAL_MODE = 2;
+    CMD_TELEOP_MOVEMENT = 3;
+    HEARTBEAT_RC = 4;
+    VIDEO_FRAME = 5;
+    TELE_IMU = 6;
+    TELE_LIDAR = 7;
+    TELE_GPS = 8;
+    VPM_OBJ_DET_COORDS = 9;
+    TELE_DRIVELINE_STATUS = 10;
+    TELE_LIDAR_POI = 11; //lidar scan with points of interest
+}
+
+enum OperationalMode {
+    TELEOP = 0;
+    FOLLOW_ME = 1;
+    AUTONOMOUS = 2;
+    IDLE = 4; //vehicle will stay in this mode and not perform any movement
+}
+
+enum Devices {
+    LIDAR = 0; //lidar hardware device
+    LIDAR_RECORD = 1; //recording of lidar data
+    APPSRC = 2; //the app src element to publish mjpeg stream over udp - obsoleted
+    APPSINK = 3; //the app src to open v4l2 device
+    DRIVELINE = 4; //for issuing motor commands
+    VISUALTELEMETRY = 5; //for overlaying information on video stream - obsoleted
+    WS_VIDEO = 6; //video frames over web sockets for zMQ - obsoleted
+    TELEMETRY = 7; //periodic status of bot sent in a loop, set to break the loop
+    OBJECT_DETECTION = 8; //Internal messaged used by fuse to ask vpm to initiate object detection and publish results
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package badbot.messages;
+
+message DrivelineStatus {
+    int32 vLeft = 1;
+    int32 vRight = 2;
+}

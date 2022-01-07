@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package badbot.messages;
+
+import "cmdtoggle.proto";
+import "botstatus.proto";
+import "consts.proto";
+import "cmd_operational_mode.proto";
+import "cmdvel.proto";
+import "videoframe.proto";
+import "imudata.proto";
+import "gpsdata.proto";
+import "lidarscan.proto";
+import "obj_det_coords.proto";
+import "telemetry.proto";
+
+message BadMessage {
+
+    string frame_id = 1;
+    MessageType msgType = 2;
+
+    oneof payload {
+        BotStatus status = 3;
+        CommandToggle toggleCmd = 4;
+        CommandOperationalMode opMode = 5;
+        CmdVelocity cmdVel = 6;
+        VideoFrame videoFrame = 7;
+        ImuData imuData = 8;
+        LidarScan lidarScan = 9;
+        GpsData gpsData = 10;
+        ObjectDetectionCoords objCoords= 11;
+        DrivelineStatus drivelineStatus = 12;
+    }
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package badbot.messages;
+
+import "consts.proto";
+
+message SystemLoadAvg {
+    float oneMin = 1;
+    float fiveMin = 2;
+    float fifteenMin = 3;
+    int32 numCores = 4;
+    uint32 totalRam = 5;
+    uint32 freeRam = 6;
+    uint32 totalSwap = 7;
+    uint32 freeSwap = 8;
+};
+
+
+message BotStatus {
+    bool lidarEnabled = 1;
+    bool lidarRecordingEnabled = 2;
+    OperationalMode mode = 3;
+    bool appSrcEnabled = 4;
+    bool wsVideoEnabled = 5;
+    bool telemetryEnabled = 6;
+    bool imuHealthy = 7;
+    SystemLoadAvg sysLoadAvg = 8;
+    bool gpsHealthy = 9;
+    bool motorControllerHealthy = 10;
+}

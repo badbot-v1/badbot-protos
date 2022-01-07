@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package badbot.messages;
+
+message LidarPoint {
+    float angle = 1;
+    float range = 2;
+    bool isTracked = 3;
+}
+
+message LidarScan {
+    repeated LidarPoint scanpoints = 1;
+}
